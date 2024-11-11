@@ -549,6 +549,11 @@ span, button {
 
         &__card {
 
+            &-price{
+                bottom: 18px;
+                right: 162px;
+            }
+
             &--big {
                 grid-column-start: 1;
                 grid-column-end: 7;
@@ -582,6 +587,21 @@ span, button {
         &--2 {
             grid-column: 10 / 13;
             grid-row: 1 / 2;
+        }
+    }
+}
+
+@media(max-width: 950px) {
+
+    .catalog {
+
+        &__card {
+
+            &-price{
+                bottom: 56px;
+                right: 12px;
+            }
+
         }
     }
 }

@@ -460,6 +460,10 @@ span:hover svg path, button:hover svg path {
   .video__preview {
     height: 337px;
   }
+  .catalog__card-price {
+    bottom: 18px;
+    right: 162px;
+  }
   .catalog__card--big {
     grid-column-start: 1;
     grid-column-end: 7;
@@ -485,6 +489,12 @@ span:hover svg path, button:hover svg path {
   .small-card--2 {
     grid-column: 10/13;
     grid-row: 1/2;
+  }
+}
+@media (max-width: 950px) {
+  .catalog__card-price {
+    bottom: 56px;
+    right: 12px;
   }
 }
 @media (max-width: 850px) {
