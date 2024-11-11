@@ -11,19 +11,24 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <section class=" video">
-        <iframe src="https://www.youtube.com/embed/L3f7WnO0MvQ?si=e_SSeqUNUXzWE4P9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <h1 class="hidden">Продажа продуктов питания</h1>
+  <section class=" video">
+      <h2 class="hidden">Промо ролик</h2>
+        <iframe src="https://www.youtube.com/embed/L3f7WnO0MvQ?si=e_SSeqUNUXzWE4P9" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <img src="./public/video-preview.jpg" alt="" class="video__preview">
 
         <button class="video__play-button">
             Смотреть видео
-            <svg width="13" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.916748 1.25L9.08341 6.5L0.916748 11.75V1.25Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <span>
+              <svg width="13" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.916748 1.25L9.08341 6.5L0.916748 11.75V1.25Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </span>
           </svg>
         </button>
     </section>
     <section class="container catalog">
+      <h2 class="hidden">Каталог продуктов</h2>
         <div>
             <article class="catalog__card  catalog__card--big">
                 <img src="./public/peas.jpg" alt="">
@@ -38,10 +43,10 @@
                     </g>
                     </g>
                     <defs>
-                    <clipPath id="clip0_3_2303">
+                    <clipPath>
                     <rect width="17" height="15" fill="white"/>
                     </clipPath>
-                    <clipPath id="clip1_3_2303">
+                    <clipPath>
                     <rect width="17" height="15" fill="white"/>
                     </clipPath>
                     </defs>
@@ -53,7 +58,7 @@
                     </svg>
                                                        
                 </button>
-                <button class="contact-btn contact-btn--big-cards" id="openModal">
+                <button class="contact-btn contact-btn--big-cards openModal" >
                   Оставить заявку
                 </button>
 
@@ -78,22 +83,22 @@
                   </g>
                   </g>
                   <defs>
-                  <clipPath id="clip0_3_2303">
+                  <clipPath >
                   <rect width="17" height="15" fill="white"/>
                   </clipPath>
-                  <clipPath id="clip1_3_2303">
+                  <clipPath >
                   <rect width="17" height="15" fill="white"/>
                   </clipPath>
                   </defs>
                 </svg>                                    
               </button>
-              <button class="catalog__card-watch-btn" id="openModal">
+              <button class="catalog__card-watch-btn"  >
                 <svg width="17.42" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.50008 4.125C10.13 4.125 10.7341 4.37522 11.1795 4.82062C11.6249 5.26602 11.8751 5.87011 11.8751 6.5C11.8751 7.12989 11.6249 7.73398 11.1795 8.17938C10.7341 8.62478 10.13 8.875 9.50008 8.875C8.87019 8.875 8.2661 8.62478 7.8207 8.17938C7.3753 7.73398 7.12508 7.12989 7.12508 6.5C7.12508 5.87011 7.3753 5.26602 7.8207 4.82062C8.2661 4.37522 8.87019 4.125 9.50008 4.125ZM9.50008 0.5625C13.4584 0.5625 16.8388 3.02458 18.2084 6.5C16.8388 9.97542 13.4584 12.4375 9.50008 12.4375C5.54175 12.4375 2.16133 9.97542 0.791748 6.5C2.16133 3.02458 5.54175 0.5625 9.50008 0.5625ZM2.51758 6.5C3.15745 7.80649 4.15103 8.90726 5.38538 9.67716C6.61972 10.4471 8.04531 10.8552 9.50008 10.8552C10.9549 10.8552 12.3804 10.4471 13.6148 9.67716C14.8491 8.90726 15.8427 7.80649 16.4826 6.5C15.8427 5.19351 14.8491 4.09274 13.6148 3.32284C12.3804 2.55294 10.9549 2.14479 9.50008 2.14479C8.04531 2.14479 6.61972 2.55294 5.38538 3.32284C4.15103 4.09274 3.15745 5.19351 2.51758 6.5Z" fill="#FEFEFE"/>
                   </svg>
                                                      
               </button>
-              <button class="contact-btn contact-btn--big-cards">
+              <button class="contact-btn contact-btn--big-cards openModal">
                 Оставить заявку
               </button>
 
@@ -132,7 +137,7 @@
                   </svg>
                                                      
               </button>
-              <button class="contact-btn contact-btn--big-cards" id="openModal">
+              <button class="contact-btn contact-btn--big-cards openModal"  >
                 Оставить заявку
               </button>
 
@@ -153,8 +158,32 @@
                 160 ₽
               </p>
 
-              <button class="contact-btn contact-btn--catalog" id="openModal">
+              <button class="contact-btn contact-btn--catalog openModal" >
                 Оставить заявку
+              </button>
+
+              <button class="catalog__card-like-btn">
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_3_2303)">
+                  <g clip-path="url(#clip1_3_2303)">
+                  <path d="M8.58499 12.7111L8.49998 12.793L8.40649 12.7111C4.36899 9.18802 1.7 6.85831 1.7 4.49592C1.7 2.86103 2.975 1.63488 4.67499 1.63488C5.98399 1.63488 7.25899 2.45232 7.70948 3.56403H9.29048C9.74098 2.45232 11.016 1.63488 12.3249 1.63488C14.025 1.63488 15.3 2.86103 15.3 4.49592C15.3 6.85831 12.6309 9.18802 8.58499 12.7111ZM12.3249 0C10.8459 0 9.42649 0.662125 8.49998 1.70027C7.57348 0.662125 6.15398 0 4.67499 0C2.057 0 0 1.97002 0 4.49592C0 7.57767 2.88999 10.1035 7.26749 13.921L8.49998 15L9.73248 13.921C14.1099 10.1035 17 7.57767 17 4.49592C17 1.97002 14.943 0 12.3249 0Z" fill="white"/>
+                  </g>
+                  </g>
+                  <defs>
+                  <clipPath >
+                  <rect width="17" height="15" fill="white"/>
+                  </clipPath>
+                  <clipPath >
+                  <rect width="17" height="15" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>                                    
+              </button>
+              <button class="catalog__card-watch-btn"  >
+                <svg width="17.42" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50008 4.125C10.13 4.125 10.7341 4.37522 11.1795 4.82062C11.6249 5.26602 11.8751 5.87011 11.8751 6.5C11.8751 7.12989 11.6249 7.73398 11.1795 8.17938C10.7341 8.62478 10.13 8.875 9.50008 8.875C8.87019 8.875 8.2661 8.62478 7.8207 8.17938C7.3753 7.73398 7.12508 7.12989 7.12508 6.5C7.12508 5.87011 7.3753 5.26602 7.8207 4.82062C8.2661 4.37522 8.87019 4.125 9.50008 4.125ZM9.50008 0.5625C13.4584 0.5625 16.8388 3.02458 18.2084 6.5C16.8388 9.97542 13.4584 12.4375 9.50008 12.4375C5.54175 12.4375 2.16133 9.97542 0.791748 6.5C2.16133 3.02458 5.54175 0.5625 9.50008 0.5625ZM2.51758 6.5C3.15745 7.80649 4.15103 8.90726 5.38538 9.67716C6.61972 10.4471 8.04531 10.8552 9.50008 10.8552C10.9549 10.8552 12.3804 10.4471 13.6148 9.67716C14.8491 8.90726 15.8427 7.80649 16.4826 6.5C15.8427 5.19351 14.8491 4.09274 13.6148 3.32284C12.3804 2.55294 10.9549 2.14479 9.50008 2.14479C8.04531 2.14479 6.61972 2.55294 5.38538 3.32284C4.15103 4.09274 3.15745 5.19351 2.51758 6.5Z" fill="#FEFEFE"/>
+                  </svg>
+                                                     
               </button>
 
               <div>
@@ -169,8 +198,31 @@
               <p class="small-card-price small-card-price--cataolg">
                 160 ₽
               </p>
-              <button class="contact-btn contact-btn--catalog" id="openModal">
+              <button class="contact-btn contact-btn--catalog openModal" >
                 Оставить заявку
+              </button>
+              <button class="catalog__card-like-btn">
+                <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_3_2303)">
+                  <g clip-path="url(#clip1_3_2303)">
+                  <path d="M8.58499 12.7111L8.49998 12.793L8.40649 12.7111C4.36899 9.18802 1.7 6.85831 1.7 4.49592C1.7 2.86103 2.975 1.63488 4.67499 1.63488C5.98399 1.63488 7.25899 2.45232 7.70948 3.56403H9.29048C9.74098 2.45232 11.016 1.63488 12.3249 1.63488C14.025 1.63488 15.3 2.86103 15.3 4.49592C15.3 6.85831 12.6309 9.18802 8.58499 12.7111ZM12.3249 0C10.8459 0 9.42649 0.662125 8.49998 1.70027C7.57348 0.662125 6.15398 0 4.67499 0C2.057 0 0 1.97002 0 4.49592C0 7.57767 2.88999 10.1035 7.26749 13.921L8.49998 15L9.73248 13.921C14.1099 10.1035 17 7.57767 17 4.49592C17 1.97002 14.943 0 12.3249 0Z" fill="white"/>
+                  </g>
+                  </g>
+                  <defs>
+                  <clipPath >
+                  <rect width="17" height="15" fill="white"/>
+                  </clipPath>
+                  <clipPath >
+                  <rect width="17" height="15" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>                                    
+              </button>
+              <button class="catalog__card-watch-btn"  >
+                <svg width="17.42" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50008 4.125C10.13 4.125 10.7341 4.37522 11.1795 4.82062C11.6249 5.26602 11.8751 5.87011 11.8751 6.5C11.8751 7.12989 11.6249 7.73398 11.1795 8.17938C10.7341 8.62478 10.13 8.875 9.50008 8.875C8.87019 8.875 8.2661 8.62478 7.8207 8.17938C7.3753 7.73398 7.12508 7.12989 7.12508 6.5C7.12508 5.87011 7.3753 5.26602 7.8207 4.82062C8.2661 4.37522 8.87019 4.125 9.50008 4.125ZM9.50008 0.5625C13.4584 0.5625 16.8388 3.02458 18.2084 6.5C16.8388 9.97542 13.4584 12.4375 9.50008 12.4375C5.54175 12.4375 2.16133 9.97542 0.791748 6.5C2.16133 3.02458 5.54175 0.5625 9.50008 0.5625ZM2.51758 6.5C3.15745 7.80649 4.15103 8.90726 5.38538 9.67716C6.61972 10.4471 8.04531 10.8552 9.50008 10.8552C10.9549 10.8552 12.3804 10.4471 13.6148 9.67716C14.8491 8.90726 15.8427 7.80649 16.4826 6.5C15.8427 5.19351 14.8491 4.09274 13.6148 3.32284C12.3804 2.55294 10.9549 2.14479 9.50008 2.14479C8.04531 2.14479 6.61972 2.55294 5.38538 3.32284C4.15103 4.09274 3.15745 5.19351 2.51758 6.5Z" fill="#FEFEFE"/>
+                  </svg>
+                                                     
               </button>
               <div>
                 <p class="chip chip--dark-purple">Хит</p>
@@ -179,44 +231,39 @@
         </div>
     </section>
     
-    <section class="slider-container ">
-      <div class="slider" id="slider">
-
+    <section class="slider">
+      <div class="slider__container">
         <div class="slider__wrapper">
-          <article class="small-card small-card--slider active">
-            <img src="./public/popcornjpg.jpg" alt="">
-            <h3 class="small-card-title small-card-title--slider">Попкорн солёный, для СВЧ-печи, 120 г</h3>
-            <p class="small-card-price small-card-price--slider">160 ₽</p>
-            <button class="contact-btn contact-btn--slider" id="openModal">Оставить заявку</button>
-            <div>
-              <p class="chip chip--green">- 29%</p>
-              <p class="chip chip--orange">Товар дня</p>
-            </div>
-          </article>
-          <article class="small-card small-card--slider">
-            <img src="./public/icecreamjpg.jpg" alt="">
-            <h3 class="small-card-title small-card-title--slider">Эскимо с малиной, 190 г</h3>
-            <p class="small-card-price small-card-price--slider">160 ₽</p>
-            <button class="contact-btn contact-btn--slider" id="openModal">Оставить заявку</button>
-            <div>
-              <p class="chip chip--dark-purple">Хит</p>
-            </div>
-          </article>
+            <article class="small-card small-card--slider active">
+                <img src="./public/popcornjpg.jpg" alt="Попкорн">
+                <h3 class="small-card-title small-card-title--slider">Попкорн солёный, для СВЧ-печи, 120 г</h3>
+                <p class="small-card-price small-card-price--slider">160 ₽</p>
+                <button class="contact-btn contact-btn--slider openModal">Оставить заявку</button>
+                <div>
+                    <p class="chip chip--green">- 29%</p>
+                    <p class="chip chip--orange">Товар дня</p>
+                </div>
+            </article>
+            <article class="small-card small-card--slider">
+                <img src="./public/icecreamjpg.jpg" alt="Эскимо">
+                <h3 class="small-card-title small-card-title--slider">Эскимо с малиной, 190 г</h3>
+                <p class="small-card-price small-card-price--slider">160 ₽</p>
+                <button class="contact-btn contact-btn--slider openModal">Оставить заявку</button>
+                <div>
+                    <p class="chip chip--dark-purple">Хит</p>
+                </div>
+            </article>
         </div>
-
-        <div class="slider__dots">
-          
-        </div>
-      </div>
+        <div class="slider__dots"></div>
+    </div>
     </section>
   
     
     <div id="modal" class="modal">
-      <form class="modal__form">
+      
+      <form class="modal__form" id="modalForm">
         <div>
-          <h2 class="modal__form-title">
-            Оставьте заявку
-          </h2>
+          <h2 class="modal__form-title">Оставьте заявку</h2>
           <button id="modal__form-cross">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 5L5 15" stroke="#444444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -224,178 +271,225 @@
             </svg>              
           </button>
         </div>
-        <input class="modal__form-name" type="text" placeholder="Ваше имя *" required>
-        <input class="modal__form-tel" type="tel" placeholder="Номер телефона*" required>
-        
+        <div class="modal__form-input">
+          <input class="modal__form-name" type="text" placeholder="Ваше имя *" required>
+          <span class="error-message">Поле не заполнено</span>
+        </div>
+        <div class="modal__form-input">
+          <input class="modal__form-tel" type="tel" placeholder="Номер телефона*" required>
+          <span class="error-message">Поле не заполнено</span>
+        </div>
         <span>
-          <input class="modal__form-checkbox" type="checkbox" id="checkbox" required>
-          <label class="modal__form-checkbox-label" for="checkbox" >Я соглашаюсь на обработку персональных данных
-            
-          </label>
-          <button class="modal__form-submit" type="submit">Отправить</button>
+          <input class="modal__form-checkbox" type="checkbox" id="checkbox">
+          <label class="modal__form-checkbox-label" for="checkbox">Я соглашаюсь на обработку персональных данных</label>
+          <button class="modal__form-submit" type="submit" disabled>Отправить</button>
         </span>
       </form>
     </div>
   
+    <script src="./js/index.js"></script>
     <script>
-      //videoplayer
-const playButton = document.querySelector('.video__play-button');
-const preview = document.querySelector('.video__preview')
+            //videoplayer
+      const playButton = document.querySelector('.video__play-button');
+      const preview = document.querySelector('.video__preview')
 
-playButton.addEventListener('click', function() {
-    var iframe = document.querySelector('iframe');
-    var iframeSrc = iframe.src;
-    
-    if (iframeSrc.indexOf('autoplay=1') === -1) {
-        iframe.src += '&autoplay=1';
-    }
+      playButton.addEventListener('click', function() {
+          var iframe = document.querySelector('iframe');
+          var iframeSrc = iframe.src;
+          
+          if (iframeSrc.indexOf('autoplay=1') === -1) {
+              iframe.src += '&autoplay=1';
+          }
 
-    playButton.style.display = 'none';
-    preview.style.display = 'none'
-});
+          playButton.style.display = 'none';
+          preview.style.display = 'none'
+      });
 
-//slider
+      //slider
 
-const slider = document.getElementById('slider');
-const wrapper = slider.querySelector('.slider__wrapper');
-const slides = Array.from(wrapper.children);
-const dotsContainer = slider.querySelector('.slider__dots');
+      const sliderWrapper = document.querySelector('.slider__wrapper');
+      const cards = document.querySelectorAll('.small-card--slider');
+      const dotsContainer = document.querySelector('.slider__dots');
 
-slides.forEach(() => {
-    const dot = document.createElement('div');
-    dot.classList.add('slider__dot');
-    dotsContainer.appendChild(dot);
-  });
+      let isDragging = false;
+      let startX, scrollStart, currentIndex = 0, swipeDirection = '';
+      const swipeThreshold = 0.3;
+      const gap = 16;
 
-  const dots = slider.querySelectorAll('.slider__dot');
+      cards.forEach(() => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider__dot');
+        dotsContainer.appendChild(dot);
+      });
 
-let isDragging = false;
-let startX, scrollStart, currentIndex = 0, swipeDirection = '';
-const swipeThreshold = 0.3; 
+      const dots = document.querySelectorAll('.slider__dot');
 
-function updateActiveSlide(newIndex) {
-  currentIndex = Math.max(0, Math.min(newIndex, slides.length - 1));
+      function updateSlider() {
+        const cardWidth = cards[0].offsetWidth;
+          
+        const offset = -(currentIndex * (cardWidth + gap) - (window.innerWidth - cardWidth) / 2);
+        sliderWrapper.style.transform = `translateX(${offset}px)`;
 
-  slides.forEach((slide, index) => {
-    slide.classList.toggle('active', index === currentIndex);
-    dots[index].classList.toggle('active', index === currentIndex);
+        cards.forEach((card, index) => {
+          card.classList.toggle('active', index === currentIndex);
+        });
 
-    if (index < currentIndex) {
-      slide.classList.remove('right');
-      slide.classList.add('left');
-    } else if (index > currentIndex) {
-      slide.classList.remove('left');
-      slide.classList.add('right');
-    } else {
-      slide.classList.remove('left', 'right');
-    }
-  });
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
 
-  wrapper.scrollTo({
-    left: currentIndex * slides[0].offsetWidth,
-    behavior: 'smooth'
-  });
-}
+      function handleStart(e) {
+        isDragging = true;
+        startX = e.pageX || e.touches[0].pageX;
+        scrollStart = sliderWrapper.scrollLeft;
+        sliderWrapper.style.cursor = 'grabbing';
+      }
 
-function handleStart(e) {
-  isDragging = true;
-  startX = e.pageX || e.touches[0].pageX;
-  scrollStart = wrapper.scrollLeft;
-  slider.style.cursor = 'grabbing';
-}
+      function handleMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        const x = e.pageX || e.touches[0].pageX;
+        const walk = (x - startX) * 1.5;
 
-function handleMove(e) {
-  if (!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX || e.touches[0].pageX;
-  const walk = (x - startX) * 1.5;
-  wrapper.scrollLeft = scrollStart - walk;
+        sliderWrapper.scrollLeft = scrollStart - walk;
 
-  swipeDirection = walk > 0 ? 'left' : 'right';
-}
+        swipeDirection = walk > 0 ? 'left' : 'right';
+      }
 
-function handleEnd(e) {
-  if (!isDragging) return;
-  isDragging = false;
-  slider.style.cursor = 'grab';
+      function handleEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        sliderWrapper.style.cursor = 'grab';
 
-  const endX = e.pageX || e.changedTouches[0].pageX;
-  const moveDistance = endX - startX;
-  const cardWidth = slides[0].offsetWidth;
+        const endX = e.pageX || e.changedTouches[0].pageX;
+        const moveDistance = endX - startX;
+        const cardWidth = cards[0].offsetWidth;
 
-  if (Math.abs(moveDistance) >= cardWidth * swipeThreshold) {
-    if (moveDistance < 0 && currentIndex < slides.length - 1) {
-      updateActiveSlide(currentIndex + 1); 
-    } else if (moveDistance > 0 && currentIndex > 0) {
-      updateActiveSlide(currentIndex - 1); 
-    }
-  } else {
-    updateActiveSlide(currentIndex);
-  }
-}
+        if (Math.abs(moveDistance) >= cardWidth * swipeThreshold) {
+          if (moveDistance < 0 && currentIndex < cards.length - 1) {
+            currentIndex++;
+          } else if (moveDistance > 0 && currentIndex > 0) {
+            currentIndex--;
+          }
+        }
 
-wrapper.addEventListener('mousedown', handleStart);
-wrapper.addEventListener('mousemove', handleMove);
-wrapper.addEventListener('mouseup', handleEnd);
-wrapper.addEventListener('mouseleave', () => {
-  isDragging = false;
-  slider.style.cursor = 'grab';
-});
+        updateSlider();
+      }
 
-wrapper.addEventListener('touchstart', handleStart);
-wrapper.addEventListener('touchmove', handleMove);
-wrapper.addEventListener('touchend', handleEnd);
+      sliderWrapper.addEventListener('mousedown', handleStart);
+      sliderWrapper.addEventListener('mousemove', handleMove);
+      sliderWrapper.addEventListener('mouseup', handleEnd);
 
-updateActiveSlide(currentIndex);
+      sliderWrapper.addEventListener('touchstart', handleStart);
+      sliderWrapper.addEventListener('touchmove', handleMove);
+      sliderWrapper.addEventListener('touchend', handleEnd);
 
-//modal
+      updateSlider();
 
-const modal = document.getElementById('modal');
-const openModalBtns = document.querySelectorAll('#openModal');
-const closeModalBtn = document.querySelector('#modal__form-cross');
+      window.addEventListener('resize', updateSlider);
 
-function openModal() {
-  modal.style.display = 'flex';
-}
+      //modal
 
-function closeModal() {
-  modal.style.display = 'none';
-}
+      const modal = document.getElementById('modal');
+      const openModalBtns = document.querySelectorAll('.openModal');
+      const closeModalBtn = document.querySelector('#modal__form-cross');
+      const form = document.querySelector('.modal__form');
+      const nameInput = document.querySelector('.modal__form-name');
+      const telInput = document.querySelector('.modal__form-tel');
+      const submitBtn = document.querySelector('.modal__form-submit');
+      const errorMessages = document.querySelectorAll('.error-message');
 
-openModalBtns.forEach(btn => {
-  btn.addEventListener('click', openModal);
-});
+      function openModal() {
+        modal.style.display = 'flex';
+      }
 
-closeModalBtn.addEventListener('click', closeModal);
+      function closeModal() {
+        modal.style.display = 'none';
+      }
 
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    closeModal();
-  }
-});
+      openModalBtns.forEach(btn => {
+        btn.addEventListener('click', openModal);
+      });
 
-document.querySelector('.modal__form-tel').addEventListener('input', function (e) {
-  let input = e.target.value.replace(/\D/g, '');
-  let formatted = '';
+      closeModalBtn.addEventListener('click', closeModal);
 
-  if (input.length > 0) {
-    formatted += '+7 (';
-  }
-  if (input.length > 1) {
-    formatted += input.substring(1, 4);
-  }
-  if (input.length >= 5) {
-    formatted += ') ' + input.substring(4, 7);
-  }
-  if (input.length >= 8) {
-    formatted += '-' + input.substring(7, 9);
-  }
-  if (input.length >= 10) {
-    formatted += '-' + input.substring(9, 11);
-  }
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
 
-  e.target.value = formatted;
-});
+      telInput.addEventListener('input', function (e) {
+        let input = e.target.value.replace(/\D/g, '');
+        let formatted = '';
+
+        if (input.length > 0) {
+          formatted += '+7 (';
+        }
+        if (input.length > 1) {
+          formatted += input.substring(1, 4);
+        }
+        if (input.length >= 5) {
+          formatted += ') ' + input.substring(4, 7);
+        }
+        if (input.length >= 8) {
+          formatted += '-' + input.substring(7, 9);
+        }
+        if (input.length >= 10) {
+          formatted += '-' + input.substring(9, 11);
+        }
+
+        e.target.value = formatted;
+        validateForm();
+      });
+
+      function validateForm() {
+        let nameIsValid = false;
+        let telIsValid = false;
+
+        if (nameInput.value.trim() === '') {
+          nameInput.classList.add('error');
+          submitBtn.setAttribute("disabled")
+          errorMessages[0].style.display = 'block';
+          nameIsValid = false;
+          submitBtn.setAttribute('disabled')
+        } else {
+          nameInput.classList.remove('error');
+          errorMessages[0].style.display = 'none';
+          nameIsValid = true;
+        }
+
+        if (telInput.value.trim() === '' || telInput.value.length < 18) {
+          telInput.classList.add('error');
+          errorMessages[1].style.display = 'block';
+          telIsValid = false;
+          submitBtn.setAttribute('disabled')
+        } else {
+          telInput.classList.remove('error');
+          errorMessages[1].style.display = 'none';
+          telIsValid = true;
+        }
+
+        if (telIsValid && nameIsValid) {
+          submitBtn.removeAttribute('disabled');
+        }
+      }
+
+      nameInput.addEventListener('input', validateForm);
+      telInput.addEventListener('input', validateForm);
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        validateForm();
+        
+        if (!submitBtn.disabled) {
+          form.reset();
+          validateForm();
+          closeModal();
+        }
+      });
 
     </script>
 </body>

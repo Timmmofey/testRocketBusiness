@@ -12,6 +12,15 @@ $blue: #39B0F4;
 $dark-purple: #AC59F1;
 $purple: #FF5BC6;
 
+span, button {
+    cursor: pointer;
+    transition: stroke 0.3s ease;
+  
+    &:hover svg path {
+      stroke: #00ff08; 
+    }
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -133,8 +142,6 @@ $purple: #FF5BC6;
             position: absolute;
             top: 12px;
             right: 12px;
-            border: none;
-            background-color: transparent
         }
 
         &-watch-btn {
@@ -221,8 +228,7 @@ $purple: #FF5BC6;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    display: flex;
-    flex-direction: column;
+    transition: transform 0.3s, opacity 0.3s;
 
     div {
         position: absolute;
@@ -279,8 +285,7 @@ $purple: #FF5BC6;
     }
 
     &--slider {
-        flex: 0 0 75%;
-        height: 100%;
+        flex: 0 0 64%;
         min-height: 410px;
         opacity: 0.5;
         transition: transform 0.3s, opacity 0.3s;
@@ -294,22 +299,6 @@ $purple: #FF5BC6;
             transform: translateX(0);
             opacity: 1;
             z-index: 1;
-        }
-
-        &.left {
-            transform: translateX(-15%);
-        }
-
-        &.right {
-            transform: translateX(15%);
-        }
-
-        &:first-child {
-            margin-left: 90px;
-        }
-
-        &:last-child {
-            margin-right: 90px;
         }
 
         img {
@@ -359,105 +348,44 @@ $purple: #FF5BC6;
 
 }
 
-.slider-container {
+.slider {
     display: none;
-    flex-direction: column;
-    align-items: center;
+    
+    &__container {
+    position: relative;
     overflow: hidden;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #F2F2F2;
+    }
 
-
-    .slider {
-        position: relative;
-        width: 100%;
-        cursor: grab;
+    &__wrapper {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        transition: transform 0.4s ease;
+        gap: 16px;
+        margin-bottom: 24px;
 
-        &__wrapper {
-            display: flex;
-            scroll-snap-type: x mandatory;
-            overflow-x: scroll;
-            scrollbar-width: none;
-            transition: transform 0.3s;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
+        &::-webkit-scrollbar {
+            display: none;
         }
+    }
 
-        &__card {
-            flex: 0 0 63%;
-            height: 100%;
-            opacity: 0.5;
-            transition: transform 0.3s, opacity 0.3s;
-            background-color: #fff;
-            border-radius: 5px;
-            overflow: hidden;
-            scroll-snap-align: center;
-            position: relative;
+    &__dots {
+        margin: 0 auto;
+        display: flex;
+        gap: 8px;
+    }
 
-            &.active {
-                opacity: 1;
-                z-index: 1;
-            }
+    &__dot {
+        width: 10px;
+        height: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        transition: background-color 0.3s;
 
-            // &.left {
-            // //   transform: translateX(-15%);
-            // }
-            // &.right {
-            // //   transform: translateX(15%);
-            // }
-
-            &:first-child {
-                margin-left: 90px;
-            }
-
-            &:last-child {
-                margin-right: 90px;
-            }
-
-            img {
-                width: 100%;
-                max-height: 230px;
-                object-fit: cover;
-            }
-
-            .catalog__small-card-title {
-                padding: 15px;
-                font-size: 15px;
-                line-height: 1.2;
-                margin-bottom: 7px;
-                color: #444444;
-            }
-
-            .catalog__small-card-price {
-                text-align: center;
-                margin-bottom: 8px;
-                line-height: 20px;
-                color: #444444;
-            }
-        }
-
-        &__dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-
-            .slider__dot {
-                width: 10px;
-                height: 10px;
-                margin: 0 5px;
-                background-color: #aaa;
-                border-radius: 50%;
-                transition: background-color 0.3s;
-
-                &.active {
-                    background-color: rgba(30, 30, 30, 1);
-                }
-            }
+        &.active {
+            background-color: rgba(30, 30, 30, 1);
         }
     }
 }
@@ -476,25 +404,28 @@ $purple: #FF5BC6;
 
     &__form {
         background-color: #fff;
-        padding: 12px;
+        padding: 24px; 
         border-radius: 8px;
         max-width: 500px;
         width: 80%;
         text-align: center;
         position: relative;
         animation: ease 0.3s ease;
-        position: relative;
+
+        &-input{
+            position: relative;
+        }
 
         div {
             display: flex;
             justify-content: space-between;
-            padding-bottom: 32px;
         }
 
         &-title {
             color: #444444;
             font-weight: 600;
             font-size: 20px;
+            margin-bottom: 16px;
         }
 
         &-name,
@@ -503,10 +434,15 @@ $purple: #FF5BC6;
             width: 100%;
             border: 1px solid #E6E6E6;
             height: 34px;
-            margin-bottom: 24px;
+            margin-bottom: 24px; 
             border-radius: 5px;
             color: #000;
             padding: 12px 10px;
+            position: relative; 
+
+            &.error {
+                border-color: red;
+            }
 
             &::placeholder {
                 font-size: 12px;
@@ -517,38 +453,87 @@ $purple: #FF5BC6;
             }
         }
 
+        .error-message {
+            font-size: 10px;
+            color: red;
+            position: absolute;
+            bottom: 12px; 
+            left: 10px;
+            display: none;
+        }
+
+        &-name.error + .error-message,
+        &-tel.error + .error-message {
+            display: block;
+        }
+
         span {
             display: flex;
             align-items: center;
+            position: relative; 
         }
 
         &-checkbox {
             &-label {
                 margin-left: 5px;
                 margin-right: auto;
-                font-size: 8px;
+                font-size: 12px; 
                 line-height: 1.2;
                 color: #444444;
+                cursor: pointer; 
             }
         }
 
         &-submit {
             font-size: 12px;
             font-weight: bold;
-            background-color: $green;
-            padding: 6px 20px;
+            background-color: #28a745; 
+            padding: 8px 20px;
+            border: none;
             border-radius: 5px;
             line-height: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
 
             &:hover {
                 background-color: #17b870;
             }
-        }
 
+            &:disabled {
+                background-color: #c8e6c9;
+                cursor: not-allowed;
+                opacity: 0.6;
+            }
+        }
     }
 }
 
-@media(max-width: 1024px) {
+
+
+@media(max-width: 1290px){
+    .catalog {
+
+        &__card {
+
+            &-price{
+                bottom: 56px;
+                right: 12px;
+            }
+
+            &--sm1,
+            &--sm2 {
+                height: 190px;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+        }
+    }
+}
+
+@media(max-width: 1124px) {
     .video {
 
         iframe {
@@ -666,12 +651,7 @@ $purple: #FF5BC6;
         }
     }
 
-    // .contact-btn {
-    //     line-height: 1;
-    //     padding: 10px;
-    // }
-
-    .slider-container {
+    .slider {
         display: flex;
     }
 
@@ -686,6 +666,7 @@ $purple: #FF5BC6;
     .contact-btn {
     
         &--big-cards {
+            width: calc(100% - 32px);
             position: absolute;
             bottom: 12px;
             right: 50%;
@@ -711,7 +692,7 @@ $purple: #FF5BC6;
         }
 
         &__preview {
-            height: 204px;
+            height: 207px;
             padding: 0 16px;
         }
     }
@@ -722,8 +703,20 @@ $purple: #FF5BC6;
 
 @media(max-width: 450px) {
 
-    .small-card--slider {
-        max-width: 230px;
+    .catalog__card{
+        &--big{
+            height: 328px;
+        }
+
+        &--sm1, &--sm2{
+            height: 175px;
+        }
+
+        div{
+            flex-direction: row;
+            gap: 4px;
+        }
+
     }
 }
 

@@ -16,60 +16,53 @@ playButton.addEventListener('click', function() {
 
 //slider
 
-const slider = document.getElementById('slider');
-const wrapper = slider.querySelector('.slider__wrapper');
-const slides = Array.from(wrapper.children);
-const dotsContainer = slider.querySelector('.slider__dots');
-
-slides.forEach(() => {
-    const dot = document.createElement('div');
-    dot.classList.add('slider__dot');
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = slider.querySelectorAll('.slider__dot');
+const sliderWrapper = document.querySelector('.slider__wrapper');
+const cards = document.querySelectorAll('.small-card--slider');
+const dotsContainer = document.querySelector('.slider__dots');
 
 let isDragging = false;
 let startX, scrollStart, currentIndex = 0, swipeDirection = '';
-const swipeThreshold = 0.3; 
+const swipeThreshold = 0.3;
+const gap = 16;
 
-function updateActiveSlide(newIndex) {
-  currentIndex = Math.max(0, Math.min(newIndex, slides.length - 1));
+cards.forEach(() => {
+  const dot = document.createElement('div');
+  dot.classList.add('slider__dot');
+  dotsContainer.appendChild(dot);
+});
 
-  slides.forEach((slide, index) => {
-    slide.classList.toggle('active', index === currentIndex);
-    dots[index].classList.toggle('active', index === currentIndex);
+const dots = document.querySelectorAll('.slider__dot');
 
-    if (index < currentIndex) {
-      slide.classList.remove('right');
-      slide.classList.add('left');
-    } else if (index > currentIndex) {
-      slide.classList.remove('left');
-      slide.classList.add('right');
-    } else {
-      slide.classList.remove('left', 'right');
-    }
+function updateSlider() {
+  const cardWidth = cards[0].offsetWidth;
+    
+  const offset = -(currentIndex * (cardWidth + gap) - (window.innerWidth - cardWidth) / 2);
+  sliderWrapper.style.transform = `translateX(${offset}px)`;
+
+  cards.forEach((card, index) => {
+    card.classList.toggle('active', index === currentIndex);
   });
 
-  wrapper.scrollTo({
-    left: currentIndex * slides[0].offsetWidth,
-    behavior: 'smooth'
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
   });
 }
 
 function handleStart(e) {
   isDragging = true;
   startX = e.pageX || e.touches[0].pageX;
-  scrollStart = wrapper.scrollLeft;
-  slider.style.cursor = 'grabbing';
+  scrollStart = sliderWrapper.scrollLeft;
+  sliderWrapper.style.cursor = 'grabbing';
 }
 
 function handleMove(e) {
   if (!isDragging) return;
   e.preventDefault();
+  
   const x = e.pageX || e.touches[0].pageX;
   const walk = (x - startX) * 1.5;
-  wrapper.scrollLeft = scrollStart - walk;
+
+  sliderWrapper.scrollLeft = scrollStart - walk;
 
   swipeDirection = walk > 0 ? 'left' : 'right';
 }
@@ -77,42 +70,45 @@ function handleMove(e) {
 function handleEnd(e) {
   if (!isDragging) return;
   isDragging = false;
-  slider.style.cursor = 'grab';
+  sliderWrapper.style.cursor = 'grab';
 
   const endX = e.pageX || e.changedTouches[0].pageX;
   const moveDistance = endX - startX;
-  const cardWidth = slides[0].offsetWidth;
+  const cardWidth = cards[0].offsetWidth;
 
   if (Math.abs(moveDistance) >= cardWidth * swipeThreshold) {
-    if (moveDistance < 0 && currentIndex < slides.length - 1) {
-      updateActiveSlide(currentIndex + 1); 
+    if (moveDistance < 0 && currentIndex < cards.length - 1) {
+      currentIndex++;
     } else if (moveDistance > 0 && currentIndex > 0) {
-      updateActiveSlide(currentIndex - 1); 
+      currentIndex--;
     }
-  } else {
-    updateActiveSlide(currentIndex);
   }
+
+  updateSlider();
 }
 
-wrapper.addEventListener('mousedown', handleStart);
-wrapper.addEventListener('mousemove', handleMove);
-wrapper.addEventListener('mouseup', handleEnd);
-wrapper.addEventListener('mouseleave', () => {
-  isDragging = false;
-  slider.style.cursor = 'grab';
-});
+sliderWrapper.addEventListener('mousedown', handleStart);
+sliderWrapper.addEventListener('mousemove', handleMove);
+sliderWrapper.addEventListener('mouseup', handleEnd);
 
-wrapper.addEventListener('touchstart', handleStart);
-wrapper.addEventListener('touchmove', handleMove);
-wrapper.addEventListener('touchend', handleEnd);
+sliderWrapper.addEventListener('touchstart', handleStart);
+sliderWrapper.addEventListener('touchmove', handleMove);
+sliderWrapper.addEventListener('touchend', handleEnd);
 
-updateActiveSlide(currentIndex);
+updateSlider();
+
+window.addEventListener('resize', updateSlider);
 
 //modal
 
 const modal = document.getElementById('modal');
-const openModalBtns = document.querySelectorAll('#openModal');
+const openModalBtns = document.querySelectorAll('.openModal');
 const closeModalBtn = document.querySelector('#modal__form-cross');
+const form = document.querySelector('.modal__form');
+const nameInput = document.querySelector('.modal__form-name');
+const telInput = document.querySelector('.modal__form-tel');
+const submitBtn = document.querySelector('.modal__form-submit');
+const errorMessages = document.querySelectorAll('.error-message');
 
 function openModal() {
   modal.style.display = 'flex';
@@ -134,7 +130,7 @@ window.addEventListener('click', (e) => {
   }
 });
 
-document.querySelector('.modal__form-tel').addEventListener('input', function (e) {
+telInput.addEventListener('input', function (e) {
   let input = e.target.value.replace(/\D/g, '');
   let formatted = '';
 
@@ -155,4 +151,51 @@ document.querySelector('.modal__form-tel').addEventListener('input', function (e
   }
 
   e.target.value = formatted;
+  validateForm();
+});
+
+function validateForm() {
+  let nameIsValid = false;
+  let telIsValid = false;
+
+  if (nameInput.value.trim() === '') {
+    nameInput.classList.add('error');
+    submitBtn.setAttribute("disabled")
+    errorMessages[0].style.display = 'block';
+    nameIsValid = false;
+    submitBtn.setAttribute('disabled')
+  } else {
+    nameInput.classList.remove('error');
+    errorMessages[0].style.display = 'none';
+    nameIsValid = true;
+  }
+
+  if (telInput.value.trim() === '' || telInput.value.length < 18) { 
+    telInput.classList.add('error');
+    errorMessages[1].style.display = 'block';
+    telIsValid = false;
+    submitBtn.setAttribute('disabled')
+  } else {
+    telInput.classList.remove('error');
+    errorMessages[1].style.display = 'none';
+    telIsValid = true;
+  }
+
+  if (telIsValid && nameIsValid) {
+    submitBtn.removeAttribute('disabled');
+  }
+}
+
+nameInput.addEventListener('input', validateForm);
+telInput.addEventListener('input', validateForm);
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  validateForm();
+  
+  if (!submitBtn.disabled) {
+    form.reset();
+    validateForm();
+    closeModal();
+  }
 });
