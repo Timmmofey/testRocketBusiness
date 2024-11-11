@@ -6,11 +6,11 @@
   color: #fff;
 }
 
-span, button {
+button {
   cursor: pointer;
   transition: stroke 0.3s ease;
 }
-span:hover svg path, button:hover svg path {
+button:hover svg path {
   stroke: #00ff08;
 }
 
